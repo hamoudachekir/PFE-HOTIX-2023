@@ -12,7 +12,6 @@ namespace PFE.HOTIX.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        //lala
         private IConfiguration configuration;
 
         public CategoryController(IConfiguration iConfig)
