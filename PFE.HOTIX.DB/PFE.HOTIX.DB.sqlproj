@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PFE.HOTIX.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{af1eb010-85bc-41c5-9e88-d0c8f0b0001f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PFE.HOTIX.DB</RootNamespace>
+    <AssemblyName>PFE.HOTIX.DB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\app_user.sql" />
+    <Build Include="dbo\Tables\def_user_role.sql" />
+    <Build Include="dbo\Tables\product.sql" />
+    <Build Include="dbo\Tables\category.sql" />
+    <Build Include="dbo\Tables\family.sql" />
+    <Build Include="dbo\Tables\sub_family.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cat_prod_delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cat_prod_get_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cat_prod_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_cat_prod_insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_fam_delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_fam_get_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_fam_insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_fam_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sub_fam_delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sub_fam_get_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sub_fam_insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sub_fam_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_get_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_get_one_by_id.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_get_one_by_login.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_role_get_all.sql" />
+    <Build Include="dbo\Stored Procedures\sp_user_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_prod_delete.sql" />
+    <Build Include="dbo\Stored Procedures\sp_prod_insert.sql" />
+    <Build Include="dbo\Stored Procedures\sp_prod_update.sql" />
+    <Build Include="dbo\Stored Procedures\sp_prod_get_all.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PFE.HOTIX.DB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="PFE.HOTIX.DB.refactorlog" />
+  </ItemGroup>
+</Project>
