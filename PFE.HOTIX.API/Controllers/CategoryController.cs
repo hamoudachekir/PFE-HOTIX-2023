@@ -14,6 +14,7 @@ namespace PFE.HOTIX.API.Controllers
     {
         private IConfiguration configuration;
 
+        //Test from mehdi hello
         public CategoryController(IConfiguration iConfig)
         {
             configuration = iConfig;
