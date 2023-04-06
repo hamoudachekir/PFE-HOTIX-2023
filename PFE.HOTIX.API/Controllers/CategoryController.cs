@@ -12,10 +12,6 @@ namespace PFE.HOTIX.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-
-
-        //test git hello from hamouda ++++++++
-
         private IConfiguration configuration;
 
         public CategoryController(IConfiguration iConfig)
